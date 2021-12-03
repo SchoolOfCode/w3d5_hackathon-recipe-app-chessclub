@@ -19,7 +19,7 @@
 
 body{
   background-color: var(--primarycolor);
-  color: var(--textcolor)
+  color: var(--textcolor);
 }
 
 .section-heading{
@@ -142,7 +142,7 @@ padding: 1rem;
   padding-top: 5px;
 }
 
-#modal-button{
+.modal-button{
   font-size: 1rem;
   background-color: var(--buttoncolor);
   color: var(--primarycolor);
@@ -154,8 +154,16 @@ padding: 1rem;
   letter-spacing: 1px;
 }
 
-#modal-button:hover {
+.modal-button:hover {
   background-color: red;
+}
+
+#modal-recipe-button {
+  background-color: green
+}
+
+#modal-recipe-button:hover {
+  background-color:	darkgreen
 }
 
 #recipe-section{
@@ -180,3 +188,6 @@ padding: 1rem;
   }
 }
 
+#modal-button-div {
+  display: flex;
+}

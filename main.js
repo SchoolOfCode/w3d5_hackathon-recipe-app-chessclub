@@ -28,7 +28,11 @@ function showModal(event) {
       <ul class="ingredients-list">
       <h5>What you will need:</h5>
       </ul>
-      <button id="modal-button">Close</button>
+      <div id="modal-button-div">
+      <button id="modal-button" class="modal-button">Close</button>
+      <a target="_blank" href=${recipe.recipeURL}><button id="modal-recipe-button" class="modal-button">recipe</button>
+      </a>
+      </div>
       `;
       console.log(recipe.mealType[0]);
     }
@@ -75,11 +79,13 @@ async function fetchRecipe(food) {
     .then((response) => response.json())
     .then(function (data) {
       data.hits.forEach(function (hit) {
+        console.log(hit.recipe)
         let recipeObject = {
           image: hit.recipe.image,
           name: hit.recipe.label,
           mealType: hit.recipe.mealType,
           ingredients: hit.recipe.ingredientLines,
+          recipeURL: hit.recipe.url
         };
         recipesArray.push(recipeObject);
       });
