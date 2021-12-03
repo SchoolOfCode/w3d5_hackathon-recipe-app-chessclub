@@ -22,6 +22,7 @@ function showModal(event) {
       <h5 class="modal-meal-type">Meal Type: ${recipe.mealType[0]}</h5>
       <ol class="ingredients-list">
       </ol>
+      <button id="modal-button">Close</button>
       `;
       console.log(recipe.mealType[0])
     }
