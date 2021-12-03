@@ -11,6 +11,12 @@ function selectRecipeCards() {
   });
 }
 
+function closeModal() {
+  let backgroundModal = document.querySelector(".background-Modal");
+
+  document.body.removeChild(backgroundModal);
+}
+
 function showModal(event) {
   let backgroundModal = document.createElement("div");
   let modal = document.createElement("div");
@@ -28,21 +34,24 @@ function showModal(event) {
     }
   });
 
-  const ingredientsList = document.querySelector(".ingredients-list");
-
-  recipesArray.forEach(function (recipe) {
-    if (event.target.parentElement.dataset.id === recipe.name) {
-      recipe.ingredients.forEach(function (ingredient) {
-        console.log(ingredient);
-      });
-    }
-  });
-
   backgroundModal.classList.add("background-Modal");
   let documentHeight = document.body.clientHeight;
   backgroundModal.style.height = `${documentHeight}px`;
   backgroundModal.appendChild(modal);
   document.body.appendChild(backgroundModal);
+  const ingredientsList = document.querySelector(".ingredients-list");
+  const closeModalButton = document.querySelector("#modal-button");
+  closeModalButton.addEventListener("click", closeModal);
+
+  recipesArray.forEach(function (recipe) {
+    if (event.target.parentElement.dataset.id === recipe.name) {
+      recipe.ingredients.forEach(function (ingredient) {
+        let li = document.createElement("li");
+        li.innerText = ingredient;
+        ingredientsList.appendChild(li);
+      });
+    }
+  });
 }
 
 function handleRecipeClick() {
