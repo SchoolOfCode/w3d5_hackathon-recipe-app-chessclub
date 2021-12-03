@@ -1,6 +1,14 @@
 const API_KEY = "080ad8052cf223a7d33ffc8dd6683d03";
+const button = document.querySelector("#recipe-button");
+let inputField = document.querySelector("#recipe-input-field");
+let recipesArray = [];
 
-function handleRecipeClick() {}
+function handleRecipeClick() {
+  console.log(inputField.value);
+  let optionPicked = inputField.value;
+  recipesArray = [];
+  fetchRecipe(optionPicked);
+}
 
 function handleInputChange() {}
 
@@ -8,28 +16,13 @@ async function fetchRecipe(food) {
   await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=0c94e0cd&app_key=${API_KEY}
   `)
     .then((response) => response.json())
-    .then((data) => data.hits.forEach(hit => console.log(hit.recipe.cuisineType)));
+    .then(function (data) {
+      data.hits.forEach(function (hit) {
+        let recipeObject = { image: hit.recipe.image, name: hit.recipe.label };
+        console.log(recipeObject);
+        recipesArray.push(recipeObject);
+      });
+    });
 }
 
-
-fetchRecipe("american")
-
-
-// cuisineType	American
-// cuisineType	Asian
-// cuisineType	British
-// cuisineType	Caribbean
-// cuisineType	Central Europe
-// cuisineType	Chinese
-// cuisineType	Eastern Europe
-// cuisineType	French
-// cuisineType	Indian
-// cuisineType	Italian
-// cuisineType	Japanese
-// cuisineType	Kosher
-// cuisineType	Mediterranean
-// cuisineType	Mexican
-// cuisineType	Middle Eastern
-// cuisineType	Nordic
-// cuisineType	South American
-// cuisineType	South East Asian
+button.addEventListener("click", handleRecipeClick);
