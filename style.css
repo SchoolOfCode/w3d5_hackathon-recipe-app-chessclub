@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -10,4 +12,23 @@
   grid-template-rows: repeat(5, 1fr);
   max-width: 90%;
   margin: 2rem auto;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: 1rem;
+}
+
+.background-Modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
 }
