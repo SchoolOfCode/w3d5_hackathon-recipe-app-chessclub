@@ -26,8 +26,10 @@ function showModal(event) {
       modal.innerHTML = `
       <h4 class="modal-header">${recipe.name}</h4>
       <h5 class="modal-meal-type">Meal Type: ${recipe.mealType[0]}</h5>
-      <ol class="ingredients-list">
-      </ol>
+      <ul class="ingredients-list">
+    
+      <h5>What you will need:</h5>
+      </ul>
       <button id="modal-button">Close</button>
       `;
       console.log(recipe.mealType[0]);
