@@ -6,6 +6,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root{
@@ -85,7 +86,7 @@ padding: 1rem;
   left: 0;
   z-index: 1;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal {

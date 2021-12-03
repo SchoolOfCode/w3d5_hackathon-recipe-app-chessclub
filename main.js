@@ -13,7 +13,6 @@ function selectRecipeCards() {
 
 function closeModal() {
   let backgroundModal = document.querySelector(".background-Modal");
-
   document.body.removeChild(backgroundModal);
 }
 
@@ -53,6 +52,13 @@ function showModal(event) {
       });
     }
   });
+
+  backgroundModal.addEventListener("click", closeModal);
+  modal.addEventListener("click", modalClick);
+}
+
+function modalClick(event) {
+  event.stopPropagation();
 }
 
 function handleRecipeClick() {
