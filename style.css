@@ -101,6 +101,12 @@ padding: 1rem;
   min-height: 300px;
   background-color: var(--primarycolor);
   border-radius: 1rem;
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+.modal::-webkit-scrollbar {
+  width: 0px;
 }
 
 .modal-header {
