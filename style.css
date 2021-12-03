@@ -13,7 +13,7 @@
  --primarycolor: #fffecb;
  --secondarycolor: #5448c8;
  --buttoncolor: #ff2e00;
- --buttonsecondarycolor: #FEA82F
+ --buttonsecondarycolor: #FEA82F;
  --textcolor: #423E3B;
 }
 
@@ -23,8 +23,8 @@ body{
 }
 
 .section-heading{
-  background-color: var(--secondarycolor) ;
-  width: 100%;
+background-color: var(--secondarycolor) ;
+width: 100%;
 text-align: center;
 color: var(--primarycolor);
 font-size: 3rem;
