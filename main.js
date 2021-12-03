@@ -13,9 +13,34 @@ function selectRecipeCards() {
 
 function showModal(event) {
   let backgroundModal = document.createElement("div");
+  let modal = document.createElement("div");
+  modal.classList.add("modal");
+  recipesArray.forEach(function(recipe) {
+    if (event.target.parentElement.dataset.id === recipe.name) {
+      modal.innerHTML = `
+      <h4 class="modal-header">${recipe.name}</h4>
+      <h5 class="modal-meal-type">Meal Type: ${recipe.mealType[0]}</h5>
+      <ol class="ingredients-list">
+      </ol>
+      `;
+      console.log(recipe.mealType[0])
+    }
+  })
+
+  const ingredientsList = document.querySelector(".ingredients-list");
+
+  recipesArray.forEach(function(recipe) {
+   if (event.target.parentElement.dataset.id === recipe.name) {
+     recipe.ingredients.forEach(function(ingredient) {
+       console.log(ingredient)
+     })
+   }
+  })
+
   backgroundModal.classList.add("background-Modal");
   let documentHeight = document.body.clientHeight;
   backgroundModal.style.height = `${documentHeight}px`;
+  backgroundModal.appendChild(modal)
   document.body.appendChild(backgroundModal);
 }
 
@@ -39,7 +64,6 @@ async function fetchRecipe(food) {
           mealType: hit.recipe.mealType,
           ingredients: hit.recipe.ingredientLines,
         };
-        console.log(recipeObject);
         recipesArray.push(recipeObject);
       });
     });
@@ -51,6 +75,7 @@ function renderRecipes(array) {
   recipesRenderBox.innerText = "";
   array.forEach(function (recipe) {
     let recipeCardDiv = document.createElement("div");
+    recipeCardDiv.dataset.id = recipe.name;
     recipeCardDiv.classList.add("recipe-card");
     let recipeImg = document.createElement("img");
     let recipeHeader = document.createElement("h4");
