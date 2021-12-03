@@ -13,3 +13,23 @@ async function fetchRecipe(food) {
 
 
 fetchRecipe("american")
+
+
+// cuisineType	American
+// cuisineType	Asian
+// cuisineType	British
+// cuisineType	Caribbean
+// cuisineType	Central Europe
+// cuisineType	Chinese
+// cuisineType	Eastern Europe
+// cuisineType	French
+// cuisineType	Indian
+// cuisineType	Italian
+// cuisineType	Japanese
+// cuisineType	Kosher
+// cuisineType	Mediterranean
+// cuisineType	Mexican
+// cuisineType	Middle Eastern
+// cuisineType	Nordic
+// cuisineType	South American
+// cuisineType	South East Asian
